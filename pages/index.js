@@ -3,6 +3,8 @@ import Link from "next/link";
 import styles from "@/styles/postcontact.module.css";
 import Navigation from "@/components/Navigation";
 import img4 from "../public/assets/img4.jpg";
+import img5 from "../public/assets/img5.jpg";
+import Image from "next/image";
 export async function getStaticProps() {
   const posts = await fetch(
     "https://jsonplaceholder.typicode.com/posts?_limit=20"
@@ -27,21 +29,36 @@ export default function Home({ posts }) {
       <main className={styles.container_contact}>
         <section>
           <h1>Pages accueil index</h1>
-          <img src="/assets/img4.jpg" />
+          <Image
+            className={styles.index_img4}
+            placeholder="blur"
+            src={img4}
+            alt="image Thierry"
+            width="585"
+            height="599"
+          />
         </section>
 
         <ul className={styles.post_ul}>
           {posts.map((post) => {
             return (
-              <li key={post.id}>
+              <li className={styles.li_index} key={post.id}>
                 <Link
                   className={styles.link_postsIndex}
                   href={`/posts/${post.id}`}
                 >
-                  <h1>
+                  <Image
+                    className={styles.index_img5}
+                    src={img5}
+                    placeholder="blur"
+                    alt="image Thierry"
+                    width="375"
+                    height="375"
+                  />
+                  <h1 className={styles.index_h1}>
                     {post.id} - {post.title}
                   </h1>
-                  <h2>{post.title}</h2>
+                  <h2 className={styles.index_h2}>{post.title}</h2>
                   <p>{post.body}</p>
                 </Link>
               </li>

@@ -2,7 +2,12 @@ import Navigation from "@/components/Navigation";
 import React from "react";
 import styles from "../styles/postcontact.module.css";
 import Head from "next/head";
-
+import Image from "next/image";
+import img1 from "../public/assets/img1.jpg";
+import img2 from "../public/assets/img2.jpg";
+import img3 from "../public/assets/img3.jpg";
+import img5 from "../public/assets/img5.jpg";
+import img4 from "../public/assets/img4.jpg";
 const Contact = () => {
   return (
     <>
@@ -15,6 +20,48 @@ const Contact = () => {
       <Navigation />
       <div className={styles.container_contact}>
         <h1>Bienvenu de contact.js dans pages</h1>
+        <div className={styles.index_container_image}>
+          <Image
+            className={styles.index_img123}
+            placeholder="blur"
+            src={img4}
+            alt="image Thierry"
+            width="585"
+            height="599"
+          />
+          <Image
+            className={styles.index_img123}
+            src={img5}
+            placeholder="blur"
+            alt="image Thierry"
+            width="375"
+            height="375"
+          />
+          <Image
+            className={styles.index_img123}
+            src={img1}
+            placeholder="blur"
+            alt="image Thierry"
+            width="640"
+            height="383"
+          />
+          <Image
+            className={styles.index_img123}
+            src={img2}
+            placeholder="blur"
+            alt="image Thierry"
+            width="640"
+            height="960"
+          />
+          <Image
+            className={styles.index_img123}
+            src={img3}
+            placeholder="blur"
+            alt="image Thierry"
+            width="640"
+            height="960"
+          />
+        </div>
       </div>
     </>
   );
