@@ -1,10 +1,20 @@
 import Navigation from "@/components/Navigation";
 import React from "react";
 import styles from "../../styles/first-post.module.css";
+
 import Link from "next/link";
 import Head from "next/head";
-
-const FirstPost = () => {
+export async function getStaticProps() {
+  const data = await import(`../api/users.json`);
+  const arrayNames = data.users;
+  return {
+    props: {
+      arrayNames,
+    },
+  };
+}
+const FirstPost = (props) => {
+  console.log(props);
   return (
     <>
       <Head>
@@ -15,13 +25,29 @@ const FirstPost = () => {
       </Head>
       <Navigation />
       <div className={styles.container}>
-        <h1>Bonjour de posts/first-post</h1>
-        <a href="http://google.com" target="_blank">
-          ALLER A GOOGLE
-        </a>
-        <a href="http://localhost:3000" target="_blank">
-          ALLER Au SITE LOCALHOST
-        </a>
+        <h1>
+          First-post: appel dela liste de nom de api user.json crée dans ce
+          fichier
+        </h1>
+        <h2>
+          <a href="http://google.com" target="_blank">
+            click here for:** ALLER A GOOGLE**
+          </a>
+        </h2>
+        {props.arrayNames.map((names) => {
+          return (
+            <li className={styles.li} key={names.id}>
+              <h3>
+                Votre prenom: <span>{names.firstname}</span>
+              </h3>
+              <h3>
+                {" "}
+                Nom de famille:<span> {names.name}</span>
+              </h3>
+              <hr></hr>
+            </li>
+          );
+        })}
       </div>
     </>
   );

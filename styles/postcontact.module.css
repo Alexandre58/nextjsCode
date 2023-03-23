@@ -7,6 +7,37 @@
   margin-left: 150px;
   padding: 2rem;
 }
+.container_firstPost {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(197, 219, 238);
+  gap: 0.8rem;
+  border-bottom: 1px black solid;
+  border-left: 1px black solid;
+  border-radius: 50px;
+  margin-left: 150px;
+  padding: 2rem;
+}
+.contact_ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+}
+.contact_p_citaion_random {
+  text-align: center;
+  font-weight: 800;
+  border: 1px solid black;
+  padding: 2rem;
+}
+.container_firstPost p {
+  border-bottom: 1px black solid;
+  border-left: 1px black solid;
+  padding: 1rem;
+  border-radius: 50px;
+  font-weight: 800;
+  background-color: aliceblue;
+}
 .container_id {
   justify-content: center;
   align-items: center;

@@ -3,3 +3,13 @@
   margin-left: 150px;
   padding: 2rem;
 }
+.li {
+  background-color: rgb(213, 214, 215);
+}
+.li h3 {
+  padding: 0.5rem;
+  margin: 0px;
+}
+.li h3 span {
+  letter-spacing: 0.3rem;
+}
