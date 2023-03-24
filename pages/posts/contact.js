@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import React from "react";
 import styles from "../../styles/postcontact.module.css";
 import Head from "next/head";
@@ -27,9 +26,10 @@ const Contact = (props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigation />
+
       <div className={styles.container_contact}>
         <h1>Coucou de contact.js dans posts</h1>
+        <h2>Incremental Static Regeneration - Data Fetching </h2>
 
         {/**  // auteur: "Alexandre Astier",
         // acteur: "Vanessa Guedj",

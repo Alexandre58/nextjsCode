@@ -1,12 +1,33 @@
-import Navigation from "@/components/Navigation";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import styles from "../../styles/postcontact.module.css";
-import React from "react";
-useRouter;
-const article = () => {
+export async function getStaticProps() {
+  const res = await fetch(
+    "https://jsonplaceholder.typicode.com/posts?_limit=20"
+  );
+
+  const posts = await res.json();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
+const article = ({ posts }) => {
+  console.log(posts);
   const router = useRouter();
-  console.log("************router*****");
+
+  // //autre façon de faire un fetch sans getStaticProps
+  // const [posts, setPosts] = useState([]);
+  // const URL = "https://jsonplaceholder.typicode.com/posts?_limit=20";
+  // useEffect(() => {
+  //   fetch(URL)
+  //     .then((res) => res.json())
+  //     .then((posts) => setPosts(posts));
+  // }, []);
+  // console.log("************router*****");
   console.log(router);
   console.log("************route*****");
   console.log(router.route);
@@ -26,10 +47,38 @@ const article = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigation />
+
       <div className={styles.container_contact}>
-        <h1> Création d'un router pour voir ou nous sommes</h1>
+        <h1>
+          Création d'un router pour voir ou nous sommes et aussi un useEffect
+          pour faire appel à une api sans getStaticProps
+        </h1>
+        <h2>Pour voir les données que l'on reçois. Avec l'ancienne méthode</h2>
+        <h2 className={styles.h2_router_aspath}>
+          http://localhost:3000{router.asPath}
+        </h2>
         <button onClick={pushFunction}>Push à l'accueil</button>
+        <h2>Premiére façon d'afficher les données.</h2>
+
+        <h3>Deuxiéme façon d'afficher les données avec un li.</h3>
+        <ul className={styles.article_ul}>
+          {posts.map((post) => (
+            <li key={post.id}>
+              <p>
+                Id de l'article :{" "}
+                <span className={styles.article_span}> {post.id}</span>
+              </p>
+              <p>
+                Titre de l'article:
+                <span className={styles.article_span}> {post.title}</span>
+              </p>
+              <p>
+                Dèscription de l'article:{" "}
+                <span className={styles.article_span}>{post.body}</span>
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );

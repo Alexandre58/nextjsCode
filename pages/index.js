@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "@/styles/postcontact.module.css";
-import Navigation from "@/components/Navigation";
+
 import img4 from "../public/assets/img4.jpg";
 import img5 from "../public/assets/img5.jpg";
 import Image from "next/image";
@@ -17,6 +18,8 @@ export async function getStaticProps() {
   };
 }
 export default function Home({ posts }) {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -25,17 +28,24 @@ export default function Home({ posts }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigation />
+
       <main className={styles.container_contact}>
         <section>
           <h1>Pages accueil index</h1>
+          <br />
+          <hr />
+          <h2 className={styles.h2_router_aspath}>
+            http://localhost:3000{router.asPath}
+          </h2>
+          <hr />
+          <br></br>
           <Image
             className={styles.index_img4}
             placeholder="blur"
             src={img4}
             alt="image Thierry"
-            width="585"
-            height="599"
+            width={585}
+            height={599}
           />
         </section>
 
@@ -52,8 +62,8 @@ export default function Home({ posts }) {
                     src={img5}
                     placeholder="blur"
                     alt="image Thierry"
-                    width="375"
-                    height="375"
+                    width={375}
+                    height={375}
                   />
                   <h1 className={styles.index_h1}>
                     {post.id} - {post.title}

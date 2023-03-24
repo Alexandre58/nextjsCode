@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import { useRouter } from "next/router";
 import React from "react";
 import Head from "next/head";
@@ -23,9 +22,13 @@ const article = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigation />
+
       <div className={styles.container_contact}>
-        <h1>{router.query.slug}</h1>
+        <h1>[...slug].js</h1>
+        <h2>router.query.slug = {router.query.slug}</h2>
+        <h2 className={styles.h2_router_aspath}>
+          router.asPath = http://localhost:3000{router.asPath}
+        </h2>
         <button onClick={buttonFunction}>Click pour l'accueil</button>
       </div>
     </>

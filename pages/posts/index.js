@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Navigation from "@/components/Navigation";
+
 import Head from "next/head";
 import styles from "../../styles/postcontact.module.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const index = ({ posts, date }) => {
+  const router = useRouter();
   //a faire si l'on n'utilise pas get static props , il faut enlever le parametre dans index {posts} sinon bug
   //l'avantage avec getStatic>Props c'est que la liste apparait dans le code source pour le seo
   // const [posts, setPosts] = useState([]);
@@ -31,12 +33,14 @@ const index = ({ posts, date }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigation />
+
       <div className={styles.container_contact}>
         <h1>
           Bienvenu sur le dossier posts index.js sans avoir crée une route
         </h1>
-        <h2>accueil post ** index</h2>
+        <h2 className={styles.h2_router_aspath}>
+          http://localhost:3000{router.asPath}
+        </h2>
         <h2> Date du jour : {date}</h2>
         <Link href="/posts/id/10 plats basque">
           <h1 className={styles.h1}>10 plats basque...</h1>

@@ -1,4 +1,3 @@
-import Navigation from "@/components/Navigation";
 import { useRouter } from "next/router";
 
 import React from "react";
@@ -35,9 +34,11 @@ const post = ({ post }) => {
 
   return (
     <>
-      <Navigation />
       <main className={styles.container_id}>
-        <h1>fichier [id].js</h1>
+        <h1>[id].js</h1>
+        <h2 className={styles.h2_router_aspath}>
+          http://localhost:3000{router.asPath}
+        </h2>
         <Link className={styles.id_h1} href="/">
           Revenir à l'accueil sachant que vous avez la navBar sur le coté pour
           le faire , andouille !!!
