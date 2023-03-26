@@ -1,11 +1,12 @@
 .navigation_container {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
-  /* border: 2px solid black; */
+  border: 2px solid black;
   row-gap: 2rem;
-  height: 80vh;
+  height: 95vh;
   max-width: 10vw;
 }
 .navigation_Link {
@@ -23,9 +24,9 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  font-weight: 500;
+  font-weight: 900;
   background-color: rgb(165, 73, 73);
-  color: wheat;
+  color: rgb(63, 62, 60);
   border-radius: 5px;
 }
 .active::before {
@@ -42,11 +43,12 @@
 }
 .navigation_Link_connection {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  font-weight: 500;
-  background-color: rgb(200, 25, 25);
+  font-weight: 900;
+  background-color: rgb(198, 57, 57);
   color: wheat;
   border-radius: 5px;
 }

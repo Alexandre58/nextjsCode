@@ -20,6 +20,9 @@ const Auth = () => {
   };
   return (
     <div className={styles.form_container_div}>
+      <h2 className={styles.h2_router_aspath}>
+        http://localhost:3000{router.asPath}
+      </h2>
       <form className={styles.form_container} onSubmit={handleonSubmit}>
         <input
           className={styles.form_input}

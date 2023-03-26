@@ -42,6 +42,9 @@ const index = ({ posts, date }) => {
           http://localhost:3000{router.asPath}
         </h2>
         <h2> Date du jour : {date}</h2>
+        <Link href="/nasaApi">
+          <h1 className={styles.h1}>Api Nasa...</h1>
+        </Link>
         <Link href="/posts/id/10 plats basque">
           <h1 className={styles.h1}>10 plats basque...</h1>
         </Link>

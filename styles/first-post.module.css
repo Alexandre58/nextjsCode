@@ -1,7 +1,9 @@
 .container {
   border: 1px solid black;
-  margin-left: 150px;
+  margin: auto;
   padding: 2rem;
+  max-width: 1000px;
+  width: 80%;
 }
 .li {
   background-color: rgb(213, 214, 215);

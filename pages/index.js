@@ -19,7 +19,8 @@ export async function getStaticProps() {
 }
 export default function Home({ posts }) {
   const router = useRouter();
-
+  //date du jour
+  const myDate = new Date().toLocaleDateString("fr");
   return (
     <>
       <Head>
@@ -47,6 +48,7 @@ export default function Home({ posts }) {
             width={585}
             height={599}
           />
+          <h2>Date du jour: {myDate}</h2>
         </section>
 
         <ul className={styles.post_ul}>

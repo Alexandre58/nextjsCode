@@ -39,9 +39,9 @@ const post = ({ post }) => {
         <h2 className={styles.h2_router_aspath}>
           http://localhost:3000{router.asPath}
         </h2>
-        <Link className={styles.id_h1} href="/">
-          Revenir à l'accueil sachant que vous avez la navBar sur le coté pour
-          le faire , andouille !!!
+        <Link className={styles.id_h1} href="/posts">
+          Retour sachant que vous avez la navBar sur le coté pour le faire ,
+          andouille !!!
         </Link>
         <h1>nous sommes sur l'article {router.query.id}</h1>
         <h2 className={styles.h2_id}>Titre de l'article</h2>

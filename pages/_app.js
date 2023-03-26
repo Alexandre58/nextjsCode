@@ -6,7 +6,7 @@ import "@/styles/globals.css";
 export default function App({ Component, pageProps }) {
   return (
     <MyLayout>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </MyLayout>
   );
 }

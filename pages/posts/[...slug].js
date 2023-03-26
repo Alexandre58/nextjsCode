@@ -12,7 +12,7 @@ const article = () => {
   console.log(router.query);
 
   const buttonFunction = () => {
-    router.push("/");
+    router.push("/posts");
   };
   return (
     <>

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../styles/postcontact.module.css";
 import Head from "next/head";
+import { useRouter } from "next/router";
 //https://kaamelott.chaudie.re/api/all
 export async function getStaticProps() {
   const kamelot = await fetch("https://kaamelott.chaudie.re/api/all");
@@ -15,6 +16,8 @@ export async function getStaticProps() {
 }
 
 const Contact = (props) => {
+  const router = useRouter();
+
   console.log("**********props**");
   console.log(props.citation[2].infos);
   console.log("**********props**");
@@ -29,6 +32,9 @@ const Contact = (props) => {
 
       <div className={styles.container_contact}>
         <h1>Coucou de contact.js dans posts</h1>
+        <h2 className={styles.h2_router_aspath}>
+          http://localhost:{router.asPath}
+        </h2>
         <h2>Incremental Static Regeneration - Data Fetching </h2>
 
         {/**  // auteur: "Alexandre Astier",

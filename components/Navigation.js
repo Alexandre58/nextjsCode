@@ -41,8 +41,9 @@ const Navigation = () => {
         }
         href="/posts/contact"
       >
-        posts/contact
+        Contact
       </Link>
+
       <Link
         className={
           router.pathname === "/posts/first-post"
@@ -61,7 +62,7 @@ const Navigation = () => {
         }
         href={`/posts/${id}`}
       >
-        router
+        Route et Map
       </Link>
 
       <Link
@@ -74,6 +75,17 @@ const Navigation = () => {
       >
         Contact
       </Link>
+      <Link
+        className={
+          router.pathname === "/nasaApi"
+            ? styles.active
+            : styles.navigation_Link
+        }
+        href="/nasaApi"
+      >
+        Appel Server Api
+      </Link>
+
       <Link
         className={
           router.pathname === "/posts" ? styles.active : styles.navigation_Link
@@ -103,13 +115,17 @@ const Navigation = () => {
           }
           href="/dashboard"
         >
-          Dashboard
+          Ajout de card
         </Link>
       )}
 
       {user && (
         <button className={styles.navigation_Link_connection} onClick={quitter}>
-          Bonjour <strong>{user}</strong> , déconnexion
+          <p>
+            {" "}
+            Bonjour <strong>{user}</strong>
+          </p>{" "}
+          <p>(déconnection)</p>
         </button>
       )}
     </nav>
